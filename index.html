@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuentes estirables</title>
+    <style>
+        @font-face {
+            font-family: roboto-flex;
+            /* set name */
+            src: url(roboto-flex.ttf);
+            /* url of the font */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            min-height: 100%;
+            overflow-y: scroll;
+            width: 100%;
+            height: 5000dvh;
+            scroll-behavior: auto;
+            background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xMiAyMUMxNi45NzA2IDIxIDIxIDE2Ljk3MDYgMjEgMTJDMjEgNy4wMjk0NCAxNi45NzA2IDMgMTIgM0M3LjAyOTQ0IDMgMyA3LjAyOTQ0IDMgMTJDMyAxNi45NzA2IDcuMDI5NDQgMjEgMTIgMjFaIiBmaWxsPSIjMDAwMDAwIi8+DQo8L3N2Zz4=);
+            background-size: 3rem;
+            background-position: 100%;
+            background-repeat: repeat-y;
+            display: table;
+        }
+
+        .texto {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-family: roboto-flex;
+            border: none;
+            font-size: 36pt;
+            height: fit-content;
+            max-height: 100%;
+            overflow: visible;
+            text-wrap: wrap;
+            background-color: transparent;
+            white-space: pre-wrap;
+            text-align: center;
+            outline: none;
+            width: 80vw;
+            max-width: 80vw;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: pan-y;
+
+        }
+
+        p {
+            position: fixed;
+            left: 10%;
+            top: 10%;
+            font-family: roboto-flex;
+            max-width: 100px;
+        }
+
+        #fontSize {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 80%;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 1rem;
+            background: linear-gradient(to right, #000000 var(--val, 0%), #eeeeee var(--val, 0%));
+            border: none;
+            outline: none;
+            padding: 20px 0;
+            box-sizing: border-box;
+            cursor: pointer;
+            position: fixed;
+            top: 90%;
+            touch-action: none;
+            pointer-events: all;
+            z-index: 10;
+        }
+
+        #fontSize::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 0;
+            height: 0;
+        }
+
+        #fontSize::-moz-range-thumb {
+            width: 0;
+            height: 0;
+            border: none;
+            background: transparent;
+        }
+
+        #scrollDir {
+            position: fixed;
+            top: 12%;
+            left: 90%;
+            font-size: 36pt;
+        }
+
+        #fontWeight {
+            -webkit-appearance: none;
+            appearance: none;
+            position: fixed;
+            width: 80%;
+            left: 50%;
+            top: 80%;
+            transform: translateX(-50%);
+            height: 1rem;
+            background: linear-gradient(to right, #000000 var(--val, 0%), #eeeeee var(--val, 0%));
+            border: none;
+            outline: none;
+            padding: 20px 0;
+            box-sizing: border-box;
+            cursor: pointer;
+            touch-action: none;
+        }
+
+        #fontWeight::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 0;
+            height: 0;
+        }
+
+        #fontWeight::-moz-range-thumb {
+            width: 0;
+            height: 0;
+            border: none;
+            background: transparent;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                background-size: 1rem;
+            }
+
+            #scrollDir {
+                top: 5%;
+                left: 85%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="texto" id="text" contenteditable="true">El cadáver de Wamba, rey godo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.</div>
+    <p id="scrollVel">VEL: 0 | YTUC: 644 | YTLC: 493 | YTAS: 751 | YTDE: -201</p>
+    <input type="range" id="fontSize" min="12" max="90" value="48" step="1">
+    <input type="range" id="fontWeight" min="100" max="900" value="400" step="1">
+    <p id="scrollDir">-</p>
+</body>
+<script src="script.js"></script>
+
+</html>
