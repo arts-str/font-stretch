@@ -20,6 +20,12 @@
 
         html {
             height: 100%;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        html::-webkit-scrollbar {
+            display: none;
         }
 
         body {
@@ -33,6 +39,12 @@
             background-position: 100%;
             background-repeat: repeat-y;
             display: table;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
         }
 
         .texto {
@@ -156,7 +168,8 @@
 </head>
 
 <body>
-    <div class="texto" id="text" contenteditable="true">El cadáver de Wamba, rey godo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.</div>
+    <div class="texto" id="text" contenteditable="true">El cadáver de Wamba, rey godo de España, fue exhumado y
+        trasladado en una caja de zinc que pesó un kilo.</div>
     <p id="scrollVel">VEL: 0 | YTUC: 644 | YTLC: 493 | YTAS: 751 | YTDE: -201</p>
     <input type="range" id="fontSize" min="12" max="90" value="48" step="1">
     <input type="range" id="fontWeight" min="100" max="900" value="400" step="1">
