@@ -228,13 +228,13 @@ watchScrollVelocity(
         } else if (!isScrolling) {
             lastVel = 0;
             applyFVS(0);
-            scrollDir.textContent = '-';
+            scrollDir.textContent = 'Scroll';
         }
     },
     (vel, dir) => {
         isScrolling = false;
         triggerJellyBounce(dir, vel);
-        scrollDir.textContent = '-';
+        scrollDir.textContent = 'Scroll';
     }
 );
 
